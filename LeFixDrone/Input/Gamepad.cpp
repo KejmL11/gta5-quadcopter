@@ -14,10 +14,15 @@ void Gamepad::refresh()
 	button_down		= TRUE == PAD::IS_CONTROL_PRESSED(2, eControl::ControlScriptPadDown);
 	button_right	= TRUE == PAD::IS_CONTROL_PRESSED(2, eControl::ControlScriptPadRight);
 	button_left		= TRUE == PAD::IS_CONTROL_PRESSED(2, eControl::ControlScriptPadLeft);
-
-	stick_left_x	= PAD::GET_CONTROL_NORMAL(2, eControl::ControlMoveLeftRight);
-	stick_left_y	= -PAD::GET_CONTROL_NORMAL(2, eControl::ControlMoveUpDown);
-	stick_right_x	= PAD::GET_CONTROL_NORMAL(2, eControl::ControlLookLeftRight);
+	if (Settings::gamepadInvXaxis) {
+		stick_left_x = PAD::GET_CONTROL_NORMAL(2, eControl::ControlLookLeftRight);
+		stick_right_x = PAD::GET_CONTROL_NORMAL(2, eControl::ControlMoveLeftRight);
+	}
+	else {
+		stick_left_x = PAD::GET_CONTROL_NORMAL(2, eControl::ControlMoveLeftRight);
+		stick_right_x = PAD::GET_CONTROL_NORMAL(2, eControl::ControlLookLeftRight);
+	}
+	stick_left_y = -PAD::GET_CONTROL_NORMAL(2, eControl::ControlMoveUpDown);
 	stick_right_y	= -PAD::GET_CONTROL_NORMAL(2, eControl::ControlLookUpDown);
 
 	if (Settings::gamepadInvPitch) stick_right_y *= -1.0f;

@@ -319,6 +319,7 @@ void updateMenu()
 		//Options
 		menu.BoolOption("Vibration", Settings::gamepadVib, { "Toggle gamepad vibration.", "(Heavy collisions)" });
 		menu.BoolOption("Using inverted cam [GTA5]", Settings::gamepadInvPitch, { "Enabling inverted camera in the GTA5 options will invert the pitch input, this setting will invert it again." });
+		menu.BoolOption("Swap Roll and Yaw sticks", Settings::gamepadInvXaxis, { "Swaps X axis for Roll and Yaw." });
 	}
 
 	if (menu.CurrentMenu("physxmenu"))

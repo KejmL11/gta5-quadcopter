@@ -17,6 +17,7 @@ bool Settings::showStickCam = true;
 //GAMEPAD  
 bool Settings::gamepadVib = true;
 bool Settings::gamepadInvPitch = false;
+bool Settings::gamepadInvXaxis = false;
 
 //CAMERA
 
@@ -100,6 +101,7 @@ void Settings::Save() {
 	//GAMEPAD
 	settings.SetBoolValue("GAMEPAD", "vibration", gamepadVib);
 	settings.SetBoolValue("GAMEPAD", "invertedCam", gamepadInvPitch);
+	settings.SetBoolValue("GAMEPAD", "invertedXaxis", gamepadInvXaxis);
 
 	//PID
 	settings.SetBoolValue("PID", "enable", pidEnable);
@@ -162,6 +164,7 @@ void Settings::Load() {
 	//GAMEPAD
 	gamepadVib = settings.GetBoolValue("GAMEPAD", "vibration", true);
 	gamepadInvPitch = settings.GetBoolValue("GAMEPAD", "invertedCam", false);
+	gamepadInvXaxis = settings.GetBoolValue("GAMEPAD", "invertedXaxis", false);
 
 	//PID
 	pidEnable = settings.GetBoolValue("PID", "enable", true);

@@ -7,6 +7,8 @@
 #include "inc\types.h"
 #include "inc\natives.h"
 #include "inc\enums.h"
+#include "inc\windows.h"
+
 
 #include <Eigen/Dense>
 #include <string>

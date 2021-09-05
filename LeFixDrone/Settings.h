@@ -17,7 +17,7 @@ public:
 	static bool showCollider, showModel, showTrails, showStickCam;
 
 	//GAMEPAD
-	static bool gamepadVib, gamepadInvPitch;
+	static bool gamepadVib, gamepadInvPitch, gamepadInvXaxis;
 
 	//CAMERA
 	static int camMode;
